@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send PR info to Discord
-        uses: Ilshidur/action-discord@master
+        uses: Ilshidur/action-discord@0.0.2
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           message: |
