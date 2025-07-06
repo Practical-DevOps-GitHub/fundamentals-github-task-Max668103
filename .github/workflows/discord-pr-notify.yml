@@ -8,11 +8,11 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Send PR info to Discord
-        uses: Ilshidur/action-discord@0.0.2
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message: |
+      - name: Send notification to Discord
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          SLACK_MESSAGE: |
             **New Pull Request Created**
             Author: ${{ github.actor }}
             Title: ${{ github.event.pull_request.title }}
